@@ -8,11 +8,15 @@ airquality_melt = pd.melt(airquality, id_vars=['Month', 'Day'])
 print(airquality_melt.head())
 
 
-# Print the head of airquality
-print(airquality.head())
 
-# Melt airquality: airquality_melt
-airquality_melt = pd.melt(airquality, id_vars=['Month', 'Day'], var_name='measurement', value_name='reading')
+import pandas as pd
 
-# Print the head of airquality_melt
-print(airquality_melt.head())
+# Melt gapminder: gapminder_melt
+gapminder_melt = pd.melt(gapminder, id_vars='Life expectancy')
+
+# Rename the columns
+gapminder_melt.columns = ['country', 'year', 'life_expectancy']
+
+# Print the head of gapminder_melt
+print(gapminder_melt.head())
+
